@@ -30,6 +30,7 @@ sudo chmod +x /var/www/marinebank.com/*.html
 sudo chmod +x /var/www/cibmbank.com/*.html
 
 sudo git clone https://github.com/cibmis/wwwconfig ~/config
+sudo cp ~/config/apache2.conf /etc/apache2/apache2.conf
 sudo mkdir /etc/apache2/ssl
 sudo cp ~/config/certs/* /etc/apache2/ssl/.
 sudo cp ~/config/*bank.com.conf /etc/apache2/sites-available/.
