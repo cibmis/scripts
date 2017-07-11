@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#Make sure that we have all of our updates
-sudo apt-get update
-sudo apt-get upgrade
-
 #install Apache
 sudo apt-get install apache2
 sudo a2enmod ssl
