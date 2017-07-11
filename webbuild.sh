@@ -27,11 +27,13 @@ sudo git clone https://github.com/cibmis/cibm.git /var/www/cibmbank.com
 sudo chmod +x /var/www/centralillinoisbank.com/*.html
 sudo chmod +x /var/www/avebank.com/*.html
 sudo chmod +x /var/www/marinebank.com/*.html
+sudo chmod +x /var/www/cibmbank.com/*.html
 
 sudo git clone https://github.com/cibmis/wwwconfig ~/config
 sudo mkdir /etc/apache2/ssl
-sudo cp ~/config/* /etc/apache2/ssl/.
-sudo cp ~/config/*bank.conf /etc/apache2/sites-available/.
-sudo a2ensite avebank.conf
-sudo a2ensite centralillinoisbank.conf
-sudo a2ensite marinebank.conf
+sudo cp ~/config/certs/* /etc/apache2/ssl/.
+sudo cp ~/config/*bank.com.conf /etc/apache2/sites-available/.
+sudo a2ensite avebank.com.conf
+sudo a2ensite centralillinoisbank.com.conf
+sudo a2ensite marinebank.com.conf
+sudo a2ensite cibmbank.com.conf
