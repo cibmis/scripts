@@ -20,16 +20,17 @@ sudo git clone https://github.com/cibmis/ave.git /var/www/avebank.com
 sudo git clone https://github.com/cibmis/marine.git /var/www/marinebank.com
 sudo git clone https://github.com/cibmis/cibm.git /var/www/cibmbank.com
 
-sudo chmod +x /var/www/centralillinoisbank.com/*.html
-sudo chmod +x /var/www/avebank.com/*.html
-sudo chmod +x /var/www/marinebank.com/*.html
-sudo chmod +x /var/www/cibmbank.com/*.html
+# Add executable rights to folders to be able to do includes statements
+sudo chmod +x /var/www/centralillinoisbank.com
+sudo chmod +x /var/www/avebank.com
+sudo chmod +x /var/www/marinebank.com
+sudo chmod +x /var/www/cibmbank.com
 
 sudo git clone https://github.com/cibmis/wwwconfig ~/config
-sudo cp ~/config/apache2.conf /etc/apache2/apache2.conf
+sudo cp ~/prod/config/apache2.conf /etc/apache2/apache2.conf
 sudo mkdir /etc/apache2/ssl
-sudo cp ~/config/certs/* /etc/apache2/ssl/.
-sudo cp ~/config/*bank.com.conf /etc/apache2/sites-available/.
+sudo cp ~/prod/config/certs/* /etc/apache2/ssl/.
+sudo cp ~/prod/config/*bank.com.conf /etc/apache2/sites-available/.
 sudo a2ensite avebank.com.conf
 sudo a2ensite centralillinoisbank.com.conf
 sudo a2ensite marinebank.com.conf
